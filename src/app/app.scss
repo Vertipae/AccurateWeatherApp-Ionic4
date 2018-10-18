@@ -36,3 +36,12 @@
       -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
     }
   }
+  .location, .icon {
+    text-align: center;
+  }
+  .location {
+    font-size: 30px;
+  }
+  .icon img {
+    width: 70px;
+  }
