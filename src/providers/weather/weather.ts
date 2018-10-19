@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 // Http is deprecated so instead we are going to use HttpClient
 // import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
-import 'rxjs/add/operator/map';
+// import 'rxjs/add/operator/map';
 
 /*
   Generated class for the WeatherProvider provider.

@@ -5,6 +5,9 @@
 </ion-header>
 
 <ion-content>
+
+  <p *ngIf="locationAllowed == false">Location is not enabled in your browser</p>
+  <!-- *ngIf so it won't load until we had the weather && weather.weather data  -->
   <ion-grid *ngIf="weather && weather.weather">
     <ion-row>
       <ion-col>
@@ -17,7 +20,7 @@
           <ion-col>
             <ion-list>
               <ion-item>
-                <strong>Temp: </strong> {{weather.main.temp}}F&deg;
+                <strong>Temp: </strong> {{ weather.main.temp }}C&deg;
               </ion-item>
 
               <ion-item>
@@ -30,6 +33,12 @@
 
               <ion-item>
                 <strong>Wind: </strong> {{weather.wind.speed}} m/s
+              </ion-item>
+              <ion-item>
+                <strong>Lon: </strong> {{weather.coord.lon}}
+              </ion-item>
+              <ion-item>
+                <strong>Lat: </strong> {{weather.coord.lat}}
               </ion-item>
             </ion-list>
 

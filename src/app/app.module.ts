@@ -2,6 +2,8 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
+// Import Geolocation
+import { Geolocation } from '@ionic-native/geolocation';
 
 // Deprecated HttpModule so instead we are going to use HttpClientModule
 // import { HttpModule } from '@angular/http';
@@ -47,6 +49,7 @@ import { WeatherProvider } from '../providers/weather/weather';
   providers: [
     StatusBar,
     SplashScreen,
+    Geolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     WeatherProvider
   ]

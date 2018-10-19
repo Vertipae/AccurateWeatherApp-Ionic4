@@ -11,21 +11,17 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
-
     <preference name="ScrollEnabled" value="false" />
     <preference name="android-minSdkVersion" value="19" />
     <preference name="BackupWebStorage" value="none" />
     <preference name="SplashMaintainAspectRatio" value="true" />
     <preference name="SplashShowOnlyFirstTime" value="false" />
     <preference name="SplashScreen" value="screen" />
-
-    <!-- Update and add these -->
-   <preference name="FadeSplashScreenDuration" value="300" />
+    <preference name="FadeSplashScreenDuration" value="300" />
     <preference name="AutoHideSplashScreen" value="false" />
     <preference name="FadeSplashScreen" value="true" />
     <preference name="ShowSplashScreen" value="true" />
     <preference name="SplashScreenDelay" value="10000" />
-
     <platform name="android">
         <allow-intent href="market:*" />
         <icon density="ldpi" src="resources/android/icon/drawable-ldpi-icon.png" />
@@ -91,4 +87,7 @@
     <plugin name="cordova-plugin-ionic-keyboard" spec="^2.0.5" />
     <engine name="android" spec="~7.0.0" />
     <engine name="ios" spec="~4.5.5" />
+    <plugin name="cordova-plugin-geolocation" spec="^4.0.1">
+        <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="To locate you" />
+    </plugin>
 </widget>
