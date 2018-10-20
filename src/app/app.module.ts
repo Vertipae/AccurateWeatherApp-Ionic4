@@ -12,12 +12,9 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 
-// import settings
-import { SettingsPage } from '../pages/settings/settings';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -27,10 +24,8 @@ import { WeatherProvider } from '../providers/weather/weather';
   declarations: [
     MyApp,
     AboutPage,
-    ContactPage,
     HomePage,
-    TabsPage,
-    SettingsPage
+    TabsPage
   ],
   imports: [
     BrowserModule,
@@ -41,10 +36,8 @@ import { WeatherProvider } from '../providers/weather/weather';
   entryComponents: [
     MyApp,
     AboutPage,
-    ContactPage,
     HomePage,
-    TabsPage,
-    SettingsPage
+    TabsPage
   ],
   providers: [
     StatusBar,

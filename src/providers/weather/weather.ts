@@ -25,6 +25,8 @@ export class WeatherProvider {
   // Change given parameters to change the location of weather forecast
   getWeather(lat, lon) {
     return this.http.get(this.url + 'lat=' + lat + '&lon=' + lon + '&APPID=d7ac391a44dafb46d4e63ba1ee2fa22f');
+    // return this.http.get(this.url + 'lat=' + lat + '&lon=' + lon + '&units=metric&APPID=d7ac391a44dafb46d4e63ba1ee2fa22f'); <- this will fetch the celsius data. 
+    // I converted kelvin to celsius in home.ts
     // .map(res => res.json()); this works with deprecated version
   }
 

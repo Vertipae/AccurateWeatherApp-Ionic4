@@ -5,51 +5,39 @@
 // roboto, and noto sans fonts
 $font-path: "../assets/fonts";
 
-
-// The app direction is used to include
-// rtl styles in your app. For more info, please see:
-// http://ionicframework.com/docs/theming/rtl-support/
 $app-direction: ltr;
 
 
 @import "ionic.globals";
 
 
-// Shared Variables
-// --------------------------------------------------
-// To customize the look and feel of this app, you can override
-// the Sass variables found in Ionic's source scss files.
-// To view all the possible Ionic variables, see:
-// http://ionicframework.com/docs/theming/overriding-ionic-variables/
-
-
-
-
-// Named Color Variables
-// --------------------------------------------------
-// Named colors makes it easy to reuse colors on various components.
-// It's highly recommended to change the default colors
-// to match your app's branding. Ionic uses a Sass map of
-// colors so you can add, rename and remove colors as needed.
-// The "primary" color is the only required color in the map.
-
 $colors: (
-  primary:    #488aff,
-  secondary:  #32db64,
-  danger:     #f53d3d,
+  primary:    #ffaa0d,
+  secondary:  #ff9b04,
+  danger:     #3b3838,
   light:      #f4f4f4,
   dark:       #222
 );
 
 // Top Toolbar
-// $toolbar-md-background: color($colors, primary);
+$toolbar-md-background: color($colors, dark);
+$toolbar-ios-background: color($colors, dark);
+$toolbar-ios-title-text-color: color($colors, secondary);
+$toolbar-md-title-text-color: color($colors, secondary);
 
 // Bottom tabs
-//$tabs-md-background: color($colors, primary);
-// $tabs-md-tab-color-active: color($colors, danger);
-// $tabs-md-tab-text-color: color($colors, danger);
-//$list-md-background-color:color($colors, secondary);
-//$list-md-text-color:color($colors, light);
+$tabs-md-background: color($colors, dark);
+$tabs-ios-background: color($colors, dark);
+$tabs-md-tab-color-active: color($colors, secondary);
+$tabs-ios-tab-color-active: color($colors, secondary);
+$tabs-md-tab-text-color: color($colors, light);
+$tabs-ios-tab-text-color: color($colors, light);
+
+// List
+$list-md-background-color:color($colors, secondary);
+$list-ios-background-color:color($colors, secondary);
+$list-md-text-color:color($colors, dark);
+$list-ios-text-color:color($colors, dark);
 
 // App iOS Variables
 // --------------------------------------------------

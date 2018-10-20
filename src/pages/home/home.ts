@@ -11,18 +11,15 @@ export class HomePage {
 
   weather: any;
   locationAllowed: Boolean = true;
-  // location is an object
-  // define properties lat and lon
   // location: {
   //   lat: any,
   //   lon: any
   // }
 
-
   constructor(public navCtrl: NavController, private weatherProvider: WeatherProvider, private geo: Geolocation) {
 
   }
-  // Manually setting lat and lon inside to ionViewWillEnter()
+
   ionViewWillEnter() {
     var lat;
     var lon;
@@ -40,10 +37,9 @@ export class HomePage {
       this.weatherProvider.getWeather(lat, lon)
         .subscribe(weather => {
           console.log(weather);
-          weather.main.temp = Math.round((weather.main.temp - 273.15)*10)/10;
+          // Changing Kelvin to Celius and rounding to proximity of 1 decimal (you don't need to do this if you gave celsius as parameter in weather.ts)
+          weather.main.temp = Math.round((weather.main.temp - 273.15) * 10) / 10;
           this.weather = weather;
-
-
         });
 
     }).catch((error) => {
@@ -54,7 +50,7 @@ export class HomePage {
       this.weatherProvider.getWeather(lat, lon)
         .subscribe(weather => {
           console.log(weather);
-          weather.main.temp = Math.round((weather.main.temp - 273.15)*10)/10;
+          weather.main.temp = Math.round((weather.main.temp - 273.15) * 10) / 10;
           this.weather = weather;
           this.locationAllowed = false;
 

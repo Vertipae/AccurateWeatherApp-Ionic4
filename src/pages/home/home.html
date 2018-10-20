@@ -3,10 +3,9 @@
     <ion-title>AccurateWeather</ion-title>
   </ion-navbar>
 </ion-header>
-
 <ion-content>
 
-  <p *ngIf="locationAllowed == false">Location is not enabled in your browser</p>
+  <p class="message" *ngIf="locationAllowed == false">Location is not enabled in your browser</p>
   <!-- *ngIf so it won't load until we had the weather && weather.weather data  -->
   <ion-grid *ngIf="weather && weather.weather">
     <ion-row>
@@ -15,7 +14,6 @@
         <div class="icon">
           <img src='http://openweathermap.org/img/w/{{weather.weather[0].icon}}.png' alt="">
         </div>
-
         <ion-row>
           <ion-col>
             <ion-list>
@@ -41,10 +39,8 @@
                 <strong>Lat: </strong> {{weather.coord.lat}}
               </ion-item>
             </ion-list>
-
           </ion-col>
         </ion-row>
-
       </ion-col>
     </ion-row>
   </ion-grid>
