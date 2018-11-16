@@ -5,7 +5,15 @@
 </ion-header>
 <ion-content>
 
+
+<ion-toolbar color="dark">
+  <form (ngSubmit)="submitSearch()">
+  <ion-searchbar [(ngModel)]="search" [ngModelOptions]="{standalone: true}"></ion-searchbar>
+</form>
+</ion-toolbar>
+
   <p class="message" *ngIf="locationAllowed == false">Location is not enabled in your browser</p>
+  <p class="message" *ngIf="message != null">{{message}}</p>
   <!-- *ngIf so it won't load until we had the weather && weather.weather data  -->
   <ion-grid *ngIf="weather && weather.weather">
     <ion-row>

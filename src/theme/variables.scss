@@ -39,6 +39,9 @@ $list-ios-background-color:color($colors, secondary);
 $list-md-text-color:color($colors, dark);
 $list-ios-text-color:color($colors, dark);
 
+//Toolbar
+$searchbar-md-input-background-color: color($colors, danger);
+
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here

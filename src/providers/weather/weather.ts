@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 // import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
 // import 'rxjs/add/operator/map';
+import { catchError } from 'rxjs/operators';
 
 /*
   Generated class for the WeatherProvider provider.
@@ -24,10 +25,21 @@ export class WeatherProvider {
   // api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}
   // Change given parameters to change the location of weather forecast
   getWeather(lat, lon) {
-    return this.http.get(this.url + 'lat=' + lat + '&lon=' + lon + '&APPID=d7ac391a44dafb46d4e63ba1ee2fa22f');
-    // return this.http.get(this.url + 'lat=' + lat + '&lon=' + lon + '&units=metric&APPID=d7ac391a44dafb46d4e63ba1ee2fa22f'); <- this will fetch the celsius data. 
+    // return this.http.get(this.url + 'lat=' + lat + '&lon=' + lon + '&APPID=d7ac391a44dafb46d4e63ba1ee2fa22f'); <- Old way
+    // this will fetch the celsius data. 
+    return this.http.get(this.url + 'lat=' + lat + '&lon=' + lon + '&units=metric&APPID=d7ac391a44dafb46d4e63ba1ee2fa22f'); 
     // I converted kelvin to celsius in home.ts
     // .map(res => res.json()); this works with deprecated version
+  }
+
+  getWeatherByCity(city) {
+    var res = this.http.get(this.url + 'q=' + city + '&units=metric&APPID=d7ac391a44dafb46d4e63ba1ee2fa22f').pipe(
+      catchError((error)=>{
+        return '0';
+      })
+    );
+    console.log(res);
+    return res;
   }
 
 }
